@@ -1,0 +1,38 @@
+.side-contents
+{
+  font-style:italic;
+  font-size:15px;
+}
+.resume-container
+{
+   overflow:hidden;
+   height:380px;
+   border-top:solid 10px grey;
+   border-bottom:solid 3px grey;
+}
+.border-style
+{
+   border-bottom:solid 1px grey;
+}
+.resume-title
+{
+  margin-left:30%;
+  font-size:30px;
+  margin-bottom:3%;
+}
+
+#resumeName
+{
+  font-size:15px;
+}
+
+#resumeEducation
+{
+ font-size:15px;
+}
+
+#resumeExperience
+{
+  font-size:15px;
+}
+

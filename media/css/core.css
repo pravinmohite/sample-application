@@ -1,0 +1,21 @@
+.form-style
+{
+  padding:5px;
+  border:solid 1px whitesmoke;
+  
+}
+#jobForm
+{
+  width:50%;
+  margin-left:auto;
+  margin-right:auto;
+}
+.title-style
+{
+  text-align:center;
+}
+
+.chosen-element
+{
+  margin-top:5px;
+}
