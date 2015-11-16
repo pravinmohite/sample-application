@@ -1,103 +1,43 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <link rel="stylesheet" href="media/css/bootstrap.min.css">
-    <link rel="stylesheet" href="media/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="media/css/chosen.min.css">
-
-    <link rel="stylesheet" href="media/css/core.css">
-    <!--Messenger Libary-->
-    <link rel="stylesheet" type="text/css" href="media/css/messenger-theme-future.css" />
-    <link rel="stylesheet" type="text/css" href="media/css/messenger.css" />
-
-    <script src="media/js/jquery-1.11.0.min.js"></script>
-    <script src="media/js/bootstrap.min.js"></script>
-    <script src="media/js/chosen.jquery.min.js"></script>
-    <!--Messenger Libary-->
-
-    <script src="media/js/messenger.min.js"></script>
-    <script src="media/js/core.js"></script>
-
-
+<script src="jquery-1.11.0.min.js"></script>
+<script src="moment.js"></script>
 </head>
-
 <body>
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Sample Application</a>
-            </div>
+<div style="text-align: center;
+    margin-top: 14%;
+  
+    margin-bottom: auto;">
+<h1 style="font-size: 50px;
+    text-decoration: underline;">Days to go :</h1>
+  <h1 id="daysToGo" style="font-size: 50px;"></h1>
+</div>
 
-        </div>
-    </div>
-    <div class="container">
-        <form class="form-horizontal form-style" id="jobForm">
-            <fieldset>
-
-                <!-- Form Name -->
-                <legend class="title-style">Fill Resume</legend>
-
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="inputName">Name</label>
-                    <div class="col-md-4">
-                        <input id="inputName" name="inputName" type="text" placeholder="Name" class="form-control input-md" required="">
-                    </div>
-                </div>
-
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="inputEducation">Education Details</label>
-                    <div class="col-md-4 chosen-element">
-
-                        <select id="selectEducation" data-placeholder="Select Education Details..." style="width:100%;" class="chosen-select" required>
-                            <option value=" "></option>
-                            <option value="B.E/B.TECH">B.E/B.TECH</option>
-                            <option value="MCA">MCA</option>
-                            <option value="BCA">BCA</option>
-                            <option value="B.com">B.com</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Text input-->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="inputExperience">Previous Job Experience(Years)</label>
-                    <div class="col-md-4 chosen-element">
-
-                        <select id="selectExperience" data-placeholder="Select Experience..." style="width:100%;" class="chosen-select" required>
-                            <option value=" "></option>
-                            <option value="1 year">1 year</option>
-                            <option value="2 year">2 year</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Button (Double) -->
-                <div class="form-group">
-                    <label class="col-md-4 control-label" for="inputSave"></label>
-                    <div class="col-md-8">
-                        <button id="inputSave" type="submit" name="inputSave" class="btn btn-success">Save</button>
-                      
-                    </div>
-                </div>
-
-            </fieldset>
-        </form>
-
-
-
-
-    </div>
-
-
+  
 </body>
+<script>
+$(function()
+{
+setInterval(function()
+{
+var dateFuture = new Date("04-07-2016");
+var dateNow = new Date();
 
+var seconds = Math.floor((dateFuture - (dateNow))/1000);
+var minutes = Math.floor(seconds/60);
+var hours = Math.floor(minutes/60);
+var days1 = Math.floor(hours/24);
+var months=Math.floor(days1/30);
+days=Math.floor(days1-(30*months));
+
+hours = hours-(days1*24);
+minutes = minutes-(days1*24*60)-(hours*60);
+seconds = seconds-(days1*24*60*60)-(hours*60*60)-(minutes*60);
+$('#daysToGo').text(months+" months / "+days+" days / "+hours+" hours / "+minutes+" minutes / "+seconds+" seconds");
+
+},1000);
+
+});
+</script>
 </html>
